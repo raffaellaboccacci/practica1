@@ -1,4 +1,4 @@
-Git Clone
+Git Clone: descarga un repositorio remoto y crea una carpeta p1 con su contenido e historial Git
 @raffaellaboccacci ➜ /workspaces/practica1 (main) $ git clone https://github.com/gitt-3-pat/p1
 Cloning into 'p1'...
 remote: Enumerating objects: 6, done.
@@ -6,7 +6,7 @@ remote: Counting objects: 100% (1/1), done.
 remote: Total 6 (delta 0), reused 0 (delta 0), pack-reused 5 (from 1)
 Receiving objects: 100% (6/6), done.
 
-Git Status
+Git Status: muestra el estado del repositorio donde estoy, la rama actual
 @raffaellaboccacci ➜ /workspaces/practica1 (main) $ git status
 On branch main
 Your branch is up to date with 'origin/main'.
@@ -17,5 +17,46 @@ Untracked files:
 
 nothing added to commit but untracked files present (use "git add" to track)
 
-Git Add
-@raffaellaboccacci ➜ /workspaces/practica1 (main) $ git add README.md
+Git Add: pasa archivos a staging, que estén preparados para incluirse en el próximo commit
+@raffaellaboccacci ➜ /workspaces/practica1 (main) $ git add p1/
+
+Git Status:
+@raffaellaboccacci ➜ /workspaces/practica1 (main) $ git status
+On branch main
+Your branch is ahead of 'origin/main' by 1 commit.
+  (use "git push" to publish your local commits)
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        deleted:    p1
+        new file:   p1/README.md
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        .p1_git_backup/
+
+Git Commit: crea un commit, un punto de guardado con lo que está en staging
+@raffaellaboccacci ➜ /workspaces/practica1 (main) $ git commit -m "Agrega contenido de p1"
+git push origin main
+[main d65c161] Agrega contenido de p1
+ 2 files changed, 24 insertions(+), 1 deletion(-)
+ delete mode 160000 p1
+ create mode 100644 p1/README.md
+Enumerating objects: 7, done.
+Counting objects: 100% (7/7), done.
+Delta compression using up to 2 threads
+Compressing objects: 100% (5/5), done.
+Writing objects: 100% (6/6), 881 bytes | 881.00 KiB/s, done.
+Total 6 (delta 2), reused 0 (delta 0), pack-reused 0 (from 0)
+remote: Resolving deltas: 100% (2/2), completed with 1 local object.
+To https://github.com/raffaellaboccacci/practica1
+   f64e4b7..d65c161  main -> main
+
+Git Push: sube mis commits locales al remoto GitHub en la rama main
+@raffaellaboccacci ➜ /workspaces/practica1 (main) $ git push origin main
+Everything up-to-date
+
+Git Checkout: se usa para cambiar de rama o recuperar archivos. Si lo ejecuto sin argumentos me informa el estado
+@raffaellaboccacci ➜ /workspaces/practica1 (main) $ git checkout
+Your branch is up to date with 'origin/main'.
+
